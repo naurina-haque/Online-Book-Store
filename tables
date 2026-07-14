@@ -10,3 +10,20 @@ CREATE TABLE users (
     role      VARCHAR(20) DEFAULT 'customer',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE books (
+    book_id     INT AUTO_INCREMENT PRIMARY KEY,
+    title       VARCHAR(150) NOT NULL,
+    author      VARCHAR(100) NOT NULL,
+    price       DECIMAL(10,2) NOT NULL,
+    description TEXT,
+    created_at  DATETIME DEFAULT CURRENT_TIMESTAMP
+    genre       VARCHAR(50) DEFAULT 'General',
+    image       VARCHAR(255) DEFAULT NULL
+);
+
+INSERT INTO books (title, author, price, description, genre, image) VALUES
+('The Silent Patient', 'Alex Michaelides', 14.99, 'A psychotherapist takes on the case of a woman who refuses to speak.', 'Thriller', NULL),
+('Educated', 'Tara Westover', 12.50, 'A memoir about a woman who leaves her survivalist family and pursues education.', 'Memoir', NULL),
+('Atomic Habits', 'James Clear', 16.00, 'A practical guide to building good habits and breaking bad ones.', 'Self-help', NULL),
+('Project Hail Mary', 'Andy Weir', 18.20, 'An astronaut wakes up alone on a spacecraft with no memory of his mission.', 'Sci-fi', NULL);

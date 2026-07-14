@@ -27,3 +27,57 @@ INSERT INTO books (title, author, price, description, genre, image) VALUES
 ('Educated', 'Tara Westover', 12.50, 'A memoir about a woman who leaves her survivalist family and pursues education.', 'Memoir', NULL),
 ('Atomic Habits', 'James Clear', 16.00, 'A practical guide to building good habits and breaking bad ones.', 'Self-help', NULL),
 ('Project Hail Mary', 'Andy Weir', 18.20, 'An astronaut wakes up alone on a spacecraft with no memory of his mission.', 'Sci-fi', NULL);
+
+DROP TABLE IF EXISTS orders;
+
+CREATE TABLE IF NOT EXISTS orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_number VARCHAR(50) NOT NULL UNIQUE,
+    
+    -- Customer Identity Info
+    customer_name VARCHAR(100) NOT NULL,
+    customer_id INT NOT NULL, -- Replaced customer_email with customer_id
+    delivery_address VARCHAR(255) NOT NULL,
+    
+    -- Items detail (including individual book prices)
+    items TEXT NOT NULL, 
+    
+    -- Financial details
+    total_amount DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
+    status ENUM('Pending', 'Delivered') NOT NULL DEFAULT 'Pending',
+    
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO orders (order_number, customer_name, customer_id, delivery_address, items, total_amount, status, created_at)
+VALUES 
+(
+    'ORD-2026-001', 
+    'Alice Johnson', 
+    101, -- Customer ID instead of Email
+    '123 Green Road, Dhanmondi, Dhaka', 
+    'The Great Gatsby (Qty: 1 @ ৳350.00) | Clean Code (Qty: 1 @ ৳400.00)', 
+    750.00, 
+    'Pending', 
+    NOW() - INTERVAL 2 HOUR
+),
+(
+    'ORD-2026-002', 
+    'Bob Smith', 
+    102, -- Customer ID instead of Email
+    'House 45, Road 12, Banani, Dhaka', 
+    'Introduction to Algorithms (Qty: 1 @ ৳1200.00)', 
+    1200.00, 
+    'Pending', 
+    NOW() - INTERVAL 1 HOUR
+),
+(
+    'ORD-2026-003', 
+    'Charlie Brown', 
+    103, -- Customer ID instead of Email
+    'Sector 4, Uttara, Dhaka', 
+    'Atomic Habits (Qty: 2 @ ৳450.00)', 
+    900.00, 
+    'Delivered', 
+    NOW() - INTERVAL 1 DAY
+);

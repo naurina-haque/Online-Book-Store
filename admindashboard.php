@@ -30,7 +30,7 @@ $totalCustomers  = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS c 
         <nav class="dash-nav">
             <a href="admindashboard.php" class="active">Dashboard</a>
             <a href="books.php">Books</a>
-            <a href="#">Orders</a>
+            <a href="orders.php">Orders</a>
             <a href="#">Customers</a>
         </nav>
         <a href="logout.php" class="dash-logout">Log out</a>

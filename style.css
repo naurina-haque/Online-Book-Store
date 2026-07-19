@@ -541,6 +541,25 @@ body:has(.auth-container) {
     background: var(--navy-soft);
 }
 
+/* ---------- Auth / Checkout shared bits ---------- */
+
+.auth-eyebrow {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.back-link-container {
+    margin-top: 16px;
+}
+
+.back-link-container .back-link {
+    margin-top: 0;
+}
+
 /* ---------- Checkout page ---------- */
  
 .checkout-shell {

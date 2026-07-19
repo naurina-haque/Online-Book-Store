@@ -16,7 +16,7 @@ if (!function_exists('e')) {
 $user_id = (int) $_SESSION['user_id'];
 $orders = [];
 
-$sql = "SELECT * FROM orders WHERE customer_id = ? ORDER BY created_at DESC";
+$sql = "SELECT * FROM orders WHERE customer_id = ? AND status = 'Delivered' ORDER BY created_at DESC";
 $stmt = mysqli_prepare($conn, $sql);
 if ($stmt) {
     mysqli_stmt_bind_param($stmt, "i", $user_id);

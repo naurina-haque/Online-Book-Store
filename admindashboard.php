@@ -31,7 +31,6 @@ $totalCustomers  = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS c 
             <a href="admindashboard.php" class="active">Dashboard</a>
             <a href="books.php">Books</a>
             <a href="orders.php">Orders</a>
-            <a href="#">Customers</a>
         </nav>
         <a href="logout.php" class="dash-logout">Log out</a>
     </div>
@@ -88,7 +87,7 @@ $totalCustomers  = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS c 
                     <div class="book-card-author"><?= htmlspecialchars($book['author']) ?></div>
                     <div class="book-card-genre"><?= htmlspecialchars($book['genre']) ?></div>
                     <div class="book-card-footer">
-                        <span class="book-card-price">$<?= number_format($book['price'], 2) ?></span>
+                        <span class="book-card-price">৳<?= number_format($book['price'], 2) ?></span>
                         <span class="book-card-actions">
                             <a href="edit_book.php?id=<?= $book['book_id'] ?>">Edit</a>
                             <a href="delete_book.php?id=<?= $book['book_id'] ?>" class="delete-link" onclick="return confirm('Delete this book?');">Delete</a>

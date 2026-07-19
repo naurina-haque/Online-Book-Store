@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $totalAmount = $book['price'] * $quantity;
         $orderNumber = 'ORD-' . date('Y') . '-' . strtoupper(uniqid());
-        $itemsText   = $book['title'] . " (Qty: $quantity @ \$" . number_format($book['price'], 2) . ")";
+        $itemsText   = $book['title'] . " (Qty: $quantity @ ৳" . number_format($book['price'], 2) . ")";
 
         $stmt = mysqli_prepare($conn, "INSERT INTO orders (order_number, customer_name, customer_id, delivery_address, items, total_amount, status) VALUES (?, ?, ?, ?, ?, ?, 'Pending')");
         mysqli_stmt_bind_param(
@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="checkout-description"><?= htmlspecialchars($book['description']) ?></div>
             <?php endif; ?>
             <div class="checkout-unit-price">
-                $<?= number_format($book['price'], 2) ?> <span>each</span>
+                ৳<?= number_format($book['price'], 2) ?> <span>each</span>
             </div>
         </div>
 
@@ -115,11 +115,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="checkout-summary">
                     <div class="checkout-summary-row">
                         <span>Subtotal</span>
-                        <span id="subtotalDisplay">$<?= number_format($book['price'], 2) ?></span>
+                        <span id="subtotalDisplay">৳<?= number_format($book['price'], 2) ?></span>
                     </div>
                     <div class="checkout-summary-row checkout-summary-total">
                         <span>Total</span>
-                        <span id="totalDisplay">$<?= number_format($book['price'], 2) ?></span>
+                        <span id="totalDisplay">৳<?= number_format($book['price'], 2) ?></span>
                     </div>
                 </div>
 
@@ -144,8 +144,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         let qty = parseInt(qtyInput.value) || 1;
         if (qty < 1) qty = 1;
         const total = (unitPrice * qty).toFixed(2);
-        subtotalDisplay.textContent = '$' + total;
-        totalDisplay.textContent = '$' + total;
+        subtotalDisplay.textContent = '৳' + total;
+        totalDisplay.textContent = '৳' + total;
     }
 
     document.getElementById('qtyMinus').addEventListener('click', function () {

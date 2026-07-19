@@ -46,7 +46,7 @@ $genreOptions = mysqli_query($conn, "SELECT DISTINCT genre FROM books WHERE genr
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Browse Books — Online Book Store</title>
+    <title>Browse Books - Online Book Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -111,7 +111,7 @@ $genreOptions = mysqli_query($conn, "SELECT DISTINCT genre FROM books WHERE genr
                     <div class="book-card-author"><?= htmlspecialchars($book['author']) ?></div>
                     <div class="book-card-genre"><?= htmlspecialchars($book['genre']) ?></div>
                     <div class="book-card-footer">
-                        <span class="book-card-price">$<?= number_format($book['price'], 2) ?></span>
+                        <span class="book-card-price">৳<?= number_format($book['price'], 2) ?></span>
                         <a href="place_order.php?id=<?= $book['book_id'] ?>" class="buy-btn">Buy</a>
                     </div>
                 </div>

@@ -25,8 +25,7 @@ $result = mysqli_query($conn, "SELECT * FROM books ORDER BY created_at DESC");
         <nav class="dash-nav">
             <a href="admindashboard.php">Dashboard</a>
             <a href="books.php" class="active">Books</a>
-            <a href="#">Orders</a>
-            <a href="#">Customers</a>
+            <a href="orders.php">Orders</a>
         </nav>
         <a href="logout.php" class="dash-logout">Log out</a>
     </div>

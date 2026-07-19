@@ -58,6 +58,7 @@ $genreOptions = mysqli_query($conn, "SELECT DISTINCT genre FROM books WHERE genr
         <nav class="dash-nav">
             <a href="customerdashboard.php" class="active">Browse Books</a>
             <a href="order_history.php">My Orders</a>
+            <a href="track_order.php">Track Orders</a>
         </nav>
         <a href="logout.php" class="dash-logout">Log out</a>
     </div>

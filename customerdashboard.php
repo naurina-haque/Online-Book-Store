@@ -112,6 +112,7 @@ $genreOptions = mysqli_query($conn, "SELECT DISTINCT genre FROM books WHERE genr
                     <div class="book-card-genre"><?= htmlspecialchars($book['genre']) ?></div>
                     <div class="book-card-footer">
                         <span class="book-card-price">$<?= number_format($book['price'], 2) ?></span>
+                        <a href="place_order.php?id=<?= $book['book_id'] ?>" class="buy-btn">Buy</a>
                     </div>
                 </div>
             </div>

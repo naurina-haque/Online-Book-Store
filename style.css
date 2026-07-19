@@ -511,6 +511,20 @@ body:has(.auth-container) {
   color: var(--navy);
 }
 
+.buy-btn {
+    padding: 6px 14px;
+    background: var(--navy);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.buy-btn:hover {
+    background: var(--navy-soft);
+}
+
 .book-card-actions a {
   font-size: 12px;
   font-weight: 600;
@@ -525,4 +539,39 @@ body:has(.auth-container) {
 
 .book-card-actions a:hover {
   text-decoration: underline;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+ 
+.search-input {
+    flex: 1;
+    min-width: 220px;
+    padding: 11px 14px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: var(--font-body);
+    background: var(--paper-raised);
+    color: var(--ink);
+}
+ 
+.search-input:focus {
+    outline: none;
+    border-color: var(--navy-soft);
+    box-shadow: 0 0 0 3px rgba(46,117,182,0.15);
+}
+ 
+.search-select {
+    padding: 11px 14px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: var(--font-body);
+    background: var(--paper-raised);
+    color: var(--ink);
 }
